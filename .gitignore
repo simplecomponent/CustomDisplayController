@@ -1,0 +1,7 @@
+CustomDisplayController.xcodeproj/xcuserdata/
+CustomDisplayController.xcworkspace/
+Pods/
+*.swp
+Podfile.lock
+.DS_Store
+CustomDisplayController.xcodeproj/project.xcworkspace/xcuserdata/
