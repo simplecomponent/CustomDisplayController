@@ -15,3 +15,5 @@ git tag ${NewVersionNumber}
 git push origin master --tags
 pod repo push DGLinePodSpec CustomDisplayController.podspec --verbose --allow-warnings --use-libraries --use-modular-headers
 
+pod repo push ZXCocoapods CustomDisplayController.podspec --verbose --allow-warnings --use-libraries --use-modular-headers
+
