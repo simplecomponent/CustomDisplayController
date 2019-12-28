@@ -14,7 +14,7 @@ let customView = UIView(frame: CGRect(origin: CGPoint(x: view.bounds.size.width/
                                                       y: view.bounds.size.height/2-80),
                                       size: CGSize(width: 300, height: 160)))
 customView.backgroundColor = .red        
-let disPlay = CoutomDisplayController(customView: customView, showType: .scale)
+let disPlay = CustomDisplayController(customView: customView, showType: .scale)
 self.present(disPlay, animated: true, completion: nil)
 
 ```
@@ -27,7 +27,7 @@ customVC.view.backgroundColor = .blue
 customVC.view.frame = CGRect(origin: CGPoint(x: 0, y: 200),
                              size: CGSize(width: view.bounds.size.width,
                                           height: view.bounds.size.height))
-let disPlay = CoutomDisplayController(controller: customVC, showType: .translation)
+let disPlay = CustomDisplayController(controller: customVC, showType: .translation)
 self.present(disPlay, animated: true, completion: nil)
 ```
 
