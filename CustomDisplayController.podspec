@@ -31,7 +31,7 @@ Pod::Spec.new do |s|
   s.homepage     = "https://github.com/simplecomponent/CustomDisplayController"
   # s.screenshots  = "www.example.com/screenshots_1.gif", "www.example.com/screenshots_2.gif"
 
-
+  s.static_framework = true
   # ―――  Spec License  ――――――――――――――――――――――――――――――――――――――――――――――――――――――――――― #
   #
   #  Licensing your code is important. See http://choosealicense.com for more info.
@@ -41,7 +41,7 @@ Pod::Spec.new do |s|
 
   # s.license      = "MIT (example)"
   s.license      = { :type => "MIT", :file => "FILE_LICENSE" }
-
+  s.pod_target_xcconfig = {'$(SWIFT_MODULE_NAME)-Swift.h'}
 
   # ――― Author Metadata  ――――――――――――――――――――――――――――――――――――――――――――――――――――――――― #
   #

@@ -8,6 +8,50 @@
 
 import UIKit
 
+extension CustomDisplayAction {
+
+    
+    @available(iOS 8.0, *)
+    public enum Style : Int {
+
+        
+        case `default` = 0
+
+        case destructive
+        
+        case cancel
+    }
+}
+
+extension CustomDisplayController {
+
+    @objc public enum Style : Int {
+
+        case actionSheet
+        
+//        case alert
+
+    }
+}
+
+open class CustomDisplayAction {
+
+    convenience init(title: String?, style: CustomDisplayAction.Style, handler: ((CustomDisplayAction) -> Void)? = nil) {
+        self.init()
+        self._title = title
+        self._handler = handler
+        self._style = style
+    }
+    private var _title: String?
+    private var _handler: ((CustomDisplayAction) -> Void)?
+    private var _style = CustomDisplayAction.Style.default
+    
+    open var handler: ((CustomDisplayAction) -> Void)? { return _handler }
+    open var title: String? { return _title }
+    open var style: CustomDisplayAction.Style { return _style }
+//    open var isEnabled: Bool
+}
+
 /**
  注意：
  - 不管CustomView还是CustomController，定义好view的frame再传入。
@@ -20,12 +64,28 @@ import UIKit
         return [.bottom,.right,.left,.right]
     }
     private var inputViewList = [UIView]()
+    private var actionList = [CustomDisplayAction]()
     //MARK:- lifeCircle
     override public func viewDidLoad() {
         super.viewDidLoad()
         view.backgroundColor = maskColor
         addController(containerController)
         signNotification()
+    }
+    
+    public func addAction(action: CustomDisplayAction){
+        switch action.style {
+            case .cancel:
+                if !actionList.contains(where: { $0.style == .cancel }){
+                    actionList.append(action)
+                }
+            default:
+                actionList.append(action)
+        }
+        actionSheet?.setActionList(actionList)
+        actionSheet?.frame.size = actionSheet?.actionSheetSize ?? .zero
+        let height = actionSheet?.frame.size.height ?? 0
+        actionSheet?.frame.origin = CGPoint(x: 0, y: UIScreen.main.bounds.size.height-height)
     }
     
     private func signNotification(){
@@ -82,9 +142,6 @@ import UIKit
         case .translation:
             translation(controller)
         }
-        
-//        getInputViews()
-        
     }
     
     private func getInputViewsWith(_ view: UIView){
@@ -98,19 +155,6 @@ import UIKit
                 getInputViewsWith(subview)
             }
         }
-    }
-    private func getInputViews(){
-        guard let subviews = containerController?.view.subviews else { return }
-        
-        for subview in subviews{
-            if subview.isKind(of: UITextView.self) || subview.isKind(of: UITextField.self){
-                inputViewList.append(subview)
-            }
-            
-        }
-        
-        inputViewList = inputViewList.sorted(by: { ($0.frame.origin.y + $0.frame.size.height) < ($1.frame.origin.y + $1.frame.size.height) })
-        
     }
     
     private func getNextInputView()->UIView{
@@ -169,17 +213,44 @@ import UIKit
     }
     
     //MARK:- 初始化方法
+    
+    /// 自定义view
+    /// - Parameters:
+    ///   - customView: 自定义view
+    ///   - showType: 动画类型
     @objc public convenience init(customView: UIView,showType: DisplayAnimationType){
         self.init(nibName: nil, bundle: nil)
         self.showType = showType
         self.containerController = getVCByCustomView(customView)
     }
     
+    /// 自定义控制器
+    /// - Parameters:
+    ///   - controller: 自定义控制器
+    ///   - showType: 动画类型
     @objc public convenience init(controller: UIViewController,showType: DisplayAnimationType) {
         self.init(nibName: nil, bundle: nil)
         self.showType = showType
         self.containerController = controller
     }
+    
+    /// 默认视图
+    /// - Parameters:
+    ///   - title: 标题
+    ///   - message: 副标题
+    ///   - preferredStyle: CustomDisplayController.Style
+    @objc public convenience init(title: String?,message:String?,preferredStyle: CustomDisplayController.Style){
+        self.init(nibName: nil, bundle: nil)
+        self.showType = .translation
+//        actionSheet = ZXActionSheet(target: self)
+        actionSheet = ActionSheet(target: self)
+        actionSheet?.backgroundColor = .black
+        actionSheet?.setTitle(title, AndMessage: message)
+        self.containerController = getVCByCustomView(actionSheet!)
+    }
+    
+//    private var actionSheet: ZXActionSheet?
+    private var actionSheet: ActionSheet?
     
     override init(nibName nibNameOrNil: String?, bundle nibBundleOrNil: Bundle?) {
         super.init(nibName: nibNameOrNil, bundle: nibBundleOrNil)
@@ -193,6 +264,12 @@ import UIKit
     //MARK:- func
     
     /*public*/
+    
+    /// 配置 ActionSheet
+    /// - Parameter config: ZXActionSheetConfig
+    @objc public func setActionSheetConfig(_ config: ZXActionSheetConfig = ZXActionSheetConfig.default){
+        actionSheet?.setConfig(config)
+    }
     
     /// 消失方法
     /// - Parameter completion: 动画完成回调
@@ -239,7 +316,7 @@ import UIKit
     }
     
     ///大小动画
-    func scale(_ controller: UIViewController){
+    private func scale(_ controller: UIViewController){
         controller.view.transform = CGAffineTransform(scaleX: 0, y: 0)
         UIView.animate(withDuration: 0.3, delay: 0, usingSpringWithDamping: 0.8, initialSpringVelocity: 0.8, options: .curveEaseInOut, animations: {
             controller.view.transform = CGAffineTransform(scaleX: 1, y: 1)
@@ -249,7 +326,7 @@ import UIKit
     }
     
     ///位移动画
-    func translation(_ controller: UIViewController){
+    private func translation(_ controller: UIViewController){
         controller.view.transform = CGAffineTransform(translationX: 0,
                                                       y: controller.view.bounds.size.height)
         UIView.animate(withDuration: 0.3, delay: 0, usingSpringWithDamping: 1, initialSpringVelocity: 1, options: .curveEaseInOut, animations: {
@@ -317,6 +394,8 @@ import UIKit
     /*public*/
     ///输入view底部Y轴偏移距离（UIText**）
     @objc public var inputOffsetY: CGFloat = 10
+//    @objc public var
+    ///显示的view
     @objc public var contentView: UIView{
         return content_view
     }
@@ -350,7 +429,6 @@ extension CustomDisplayController{
     }
 }
 
-
 @objc public protocol CustomDisplayControllerDelegate {
     @objc optional func willAppear(_ alert:CustomDisplayController)
     @objc optional func willDismiss(_ alert:CustomDisplayController)
@@ -361,4 +439,5 @@ class ZXCustomController: UIViewController{
     override var preferredScreenEdgesDeferringSystemGestures: UIRectEdge{
         return [.bottom,.right]
     }
+    
 }

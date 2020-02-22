@@ -12,8 +12,16 @@
 		180E06DE23B5F10300C2E0D8 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 180E06DC23B5F10300C2E0D8 /* Main.storyboard */; };
 		180E06E023B5F10400C2E0D8 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 180E06DF23B5F10400C2E0D8 /* Assets.xcassets */; };
 		180E06E323B5F10400C2E0D8 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 180E06E123B5F10400C2E0D8 /* LaunchScreen.storyboard */; };
-		180E06EC23B5F13100C2E0D8 /* CoutomDisplayController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 180E06EB23B5F13100C2E0D8 /* CoutomDisplayController.swift */; };
 		180E06EF23B5F18900C2E0D8 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 180E06EE23B5F18900C2E0D8 /* ViewController.swift */; };
+		180E072123B6FAD100C2E0D8 /* CustomDisplayController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 180E072023B6FAD100C2E0D8 /* CustomDisplayController.swift */; };
+		182769A62401280400010F11 /* ActionSheetContent.swift in Sources */ = {isa = PBXBuildFile; fileRef = 182769A52401280400010F11 /* ActionSheetContent.swift */; };
+		18BEB57423FE89DE00C77E72 /* ZXActionSheet.swift in Sources */ = {isa = PBXBuildFile; fileRef = 18BEB57323FE89DE00C77E72 /* ZXActionSheet.swift */; };
+		18BEB57623FF89AB00C77E72 /* Define.swift in Sources */ = {isa = PBXBuildFile; fileRef = 18BEB57523FF89AB00C77E72 /* Define.swift */; };
+		18BEB57823FFBA9900C77E72 /* ZXActionSheetHeadView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 18BEB57723FFBA9900C77E72 /* ZXActionSheetHeadView.swift */; };
+		18BEB57A23FFBAE300C77E72 /* ZXActionSheetCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 18BEB57923FFBAE300C77E72 /* ZXActionSheetCell.swift */; };
+		18BEB57C23FFBB1300C77E72 /* ZXActionSheetConfig.swift in Sources */ = {isa = PBXBuildFile; fileRef = 18BEB57B23FFBB1300C77E72 /* ZXActionSheetConfig.swift */; };
+		18BEB57E23FFC66000C77E72 /* ZXActionSheetFooterView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 18BEB57D23FFC66000C77E72 /* ZXActionSheetFooterView.swift */; };
+		18BEB58123FFCAA800C77E72 /* ActionSheet.swift in Sources */ = {isa = PBXBuildFile; fileRef = 18BEB58023FFCAA800C77E72 /* ActionSheet.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -24,8 +32,16 @@
 		180E06DF23B5F10400C2E0D8 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		180E06E223B5F10400C2E0D8 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		180E06E423B5F10400C2E0D8 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
-		180E06EB23B5F13100C2E0D8 /* CoutomDisplayController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CoutomDisplayController.swift; sourceTree = "<group>"; };
 		180E06EE23B5F18900C2E0D8 /* ViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
+		180E072023B6FAD100C2E0D8 /* CustomDisplayController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CustomDisplayController.swift; sourceTree = "<group>"; };
+		182769A52401280400010F11 /* ActionSheetContent.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ActionSheetContent.swift; sourceTree = "<group>"; };
+		18BEB57323FE89DE00C77E72 /* ZXActionSheet.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ZXActionSheet.swift; sourceTree = "<group>"; };
+		18BEB57523FF89AB00C77E72 /* Define.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Define.swift; sourceTree = "<group>"; };
+		18BEB57723FFBA9900C77E72 /* ZXActionSheetHeadView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ZXActionSheetHeadView.swift; sourceTree = "<group>"; };
+		18BEB57923FFBAE300C77E72 /* ZXActionSheetCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ZXActionSheetCell.swift; sourceTree = "<group>"; };
+		18BEB57B23FFBB1300C77E72 /* ZXActionSheetConfig.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ZXActionSheetConfig.swift; sourceTree = "<group>"; };
+		18BEB57D23FFC66000C77E72 /* ZXActionSheetFooterView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ZXActionSheetFooterView.swift; sourceTree = "<group>"; };
+		18BEB58023FFCAA800C77E72 /* ActionSheet.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ActionSheet.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -73,7 +89,14 @@
 		180E06EA23B5F12700C2E0D8 /* CustomDisplayController */ = {
 			isa = PBXGroup;
 			children = (
-				180E06EB23B5F13100C2E0D8 /* CoutomDisplayController.swift */,
+				18BEB57F23FFCA8700C77E72 /* ActionSheet */,
+				180E072023B6FAD100C2E0D8 /* CustomDisplayController.swift */,
+				18BEB57323FE89DE00C77E72 /* ZXActionSheet.swift */,
+				18BEB57D23FFC66000C77E72 /* ZXActionSheetFooterView.swift */,
+				18BEB57723FFBA9900C77E72 /* ZXActionSheetHeadView.swift */,
+				18BEB57923FFBAE300C77E72 /* ZXActionSheetCell.swift */,
+				18BEB57B23FFBB1300C77E72 /* ZXActionSheetConfig.swift */,
+				18BEB57523FF89AB00C77E72 /* Define.swift */,
 			);
 			path = CustomDisplayController;
 			sourceTree = "<group>";
@@ -84,6 +107,15 @@
 				180E06EE23B5F18900C2E0D8 /* ViewController.swift */,
 			);
 			path = Demo;
+			sourceTree = "<group>";
+		};
+		18BEB57F23FFCA8700C77E72 /* ActionSheet */ = {
+			isa = PBXGroup;
+			children = (
+				18BEB58023FFCAA800C77E72 /* ActionSheet.swift */,
+				182769A52401280400010F11 /* ActionSheetContent.swift */,
+			);
+			path = ActionSheet;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -157,10 +189,18 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				180E06EC23B5F13100C2E0D8 /* CoutomDisplayController.swift in Sources */,
+				18BEB58123FFCAA800C77E72 /* ActionSheet.swift in Sources */,
 				180E06D723B5F10300C2E0D8 /* AppDelegate.swift in Sources */,
+				18BEB57E23FFC66000C77E72 /* ZXActionSheetFooterView.swift in Sources */,
+				180E072123B6FAD100C2E0D8 /* CustomDisplayController.swift in Sources */,
 				180E06EF23B5F18900C2E0D8 /* ViewController.swift in Sources */,
+				18BEB57423FE89DE00C77E72 /* ZXActionSheet.swift in Sources */,
+				18BEB57823FFBA9900C77E72 /* ZXActionSheetHeadView.swift in Sources */,
+				182769A62401280400010F11 /* ActionSheetContent.swift in Sources */,
 				180E06D923B5F10300C2E0D8 /* SceneDelegate.swift in Sources */,
+				18BEB57A23FFBAE300C77E72 /* ZXActionSheetCell.swift in Sources */,
+				18BEB57C23FFBB1300C77E72 /* ZXActionSheetConfig.swift in Sources */,
+				18BEB57623FF89AB00C77E72 /* Define.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
