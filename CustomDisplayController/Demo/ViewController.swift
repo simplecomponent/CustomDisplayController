@@ -114,46 +114,36 @@ extension ViewController: UITableViewDelegate{
             showCustomController()
             case 2:
                 let config = ZXActionSheetConfig.default
-                config.headConfig.titleFont = UIFont.boldSystemFont(ofSize: 18)
-                config.headConfig.msgFont = UIFont.boldSystemFont(ofSize: 12)
-                config.headConfig.topCornerRadius = 15
-                config.contentConfig.spacing = 8
-                config.contentConfig.maxHeight = 300
-                
+                config.contentConfig.rowHeight = 50
+                config.footerConfig.titleColor = .blue
+//                config.headConfig.titleFont = UIFont.boldSystemFont(ofSize: 18)
+//                config.headConfig.msgFont = UIFont.boldSystemFont(ofSize: 12)
+//                config.headConfig.topCornerRadius = 10000
+//                config.footerConfig.spacing = 8
+//                config.footerConfig.backColor = .red
 //                let alert = CustomDisplayController(title: "nilnilnilnilnilnilnilnilnilnilnilnilnilnilnilnilnilnilnilnilnilnilnilnilnilnilnilnilnilnilnilnilnilnilnilnilnilnilnilnilnilnilnilnilnil\nnilnilnilnilnilnil", message: "messagemessagemessagemessagemessagemessagemessagemessagemessagemessage", preferredStyle: .actionSheet)
 //                let alert = CustomDisplayController(title: nil, message: "messagemessagemessagemessagemessagemessagemessagemessagemessagemessage", preferredStyle: .actionSheet)
 //                let alert = CustomDisplayController(title: "nilnilnilnilnilnilnilnilnilnilnilnilnilnilnilnilnilnilnilnilnilnilnilnilnilnilnilnilnilnilnilnilnilnilnilnilnilnilnilnilnilnilnilnilnil", message: nil, preferredStyle: .actionSheet)
-//                let alert = CustomDisplayController(title: nil, message: nil, preferredStyle: .actionSheet)
-                let alert = CustomDisplayController(title: "标题", message: "副标题", preferredStyle: .actionSheet)
+                let alert = CustomDisplayController(title: nil, message: nil, preferredStyle: .actionSheet)
+//                let alert = CustomDisplayController(title: "选择你喜欢的内容", message: "嘿嘿~\n吼吼~", preferredStyle: .actionSheet)
                 alert.delegate = self
-                alert.setActionSheetConfig(config)
-                alert.addAction(action: CustomDisplayAction(title: "cancel", style: .cancel, handler: { (action) in
-                    print("cancel")
-                }))
-                alert.addAction(action: CustomDisplayAction(title: "default", style: .default, handler: { (action) in
-                    print("default")
-                }))
-                alert.addAction(action: CustomDisplayAction(title: "default2", style: .default, handler: { (action) in
-                    print("default2")
-                }))
-                alert.addAction(action: CustomDisplayAction(title: "default3", style: .default, handler: { (action) in
-                    print("default3")
-                }))
-                alert.addAction(action: CustomDisplayAction(title: "destructive", style: .destructive, handler: { (action) in
-                    print("destructive")
-                }))
-                alert.addAction(action: CustomDisplayAction(title: "destructive", style: .destructive, handler: { (action) in
-                    print("destructive")
-                }))
-                alert.addAction(action: CustomDisplayAction(title: "destructive", style: .destructive, handler: { (action) in
-                    print("destructive")
-                }))
-                alert.addAction(action: CustomDisplayAction(title: "destructive", style: .destructive, handler: { (action) in
-                    print("destructive")
-                }))
-                alert.addAction(action: CustomDisplayAction(title: "destructive", style: .destructive, handler: { (action) in
-                    print("destructive")
-                }))
+//                alert.setActionSheetConfig(config)
+                
+                for index in 0..<1{
+                    alert.addAction(action: CustomDisplayAction(title: "cancel\(index+1)", style: .cancel, handler: { (action) in
+                        print("cancel")
+                    }))
+                    alert.addAction(action: CustomDisplayAction(title: "loli\(index+1)", style: .default, handler: { (action) in
+                        print("loli\(index+1)")
+                    }))
+                    alert.addAction(action: CustomDisplayAction(title: "default\(index+1)", style: .default, handler: { (action) in
+                        print("default\(index+1)")
+                    }))
+                    alert.addAction(action: CustomDisplayAction(title: "destructive\(index+1)", style: .destructive, handler: { (action) in
+                        print("destructive\(index+1)")
+                    }))
+                }
+                
                 present(alert, animated: true, completion: nil)
             
                 return

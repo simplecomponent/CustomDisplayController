@@ -43,7 +43,6 @@ class CustomActionSheetHead: UIView{
         messageLabel.textColor = config.msgColor
         messageLabel.font = config.msgFont
         backgroundColor = config.backColor
-        
     }
     
     public func setTitle(_ title: String?,AndMessage message: String?){

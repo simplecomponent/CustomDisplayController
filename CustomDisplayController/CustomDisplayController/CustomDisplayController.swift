@@ -9,14 +9,14 @@
 import UIKit
 
 extension CustomDisplayAction {
-
+    
     
     @available(iOS 8.0, *)
     public enum Style : Int {
-
+        
         
         case `default` = 0
-
+        
         case destructive
         
         case cancel
@@ -24,18 +24,18 @@ extension CustomDisplayAction {
 }
 
 extension CustomDisplayController {
-
+    
     @objc public enum Style : Int {
-
+        
         case actionSheet
         
-//        case alert
-
+        //        case alert
+        
     }
 }
 
 open class CustomDisplayAction {
-
+    
     convenience init(title: String?, style: CustomDisplayAction.Style, handler: ((CustomDisplayAction) -> Void)? = nil) {
         self.init()
         self._title = title
@@ -49,7 +49,7 @@ open class CustomDisplayAction {
     open var handler: ((CustomDisplayAction) -> Void)? { return _handler }
     open var title: String? { return _title }
     open var style: CustomDisplayAction.Style { return _style }
-//    open var isEnabled: Bool
+    //    open var isEnabled: Bool
 }
 
 /**
@@ -75,14 +75,14 @@ open class CustomDisplayAction {
     
     public func addAction(action: CustomDisplayAction){
         switch action.style {
-            case .cancel:
-                if !actionList.contains(where: { $0.style == .cancel }){
-                    actionList.append(action)
-                }
-            default:
-                actionList.append(action)
+        case .cancel:
+            actionSheet?.setCancelView(action)
+            break
+        default:
+            actionList.append(action)
+            actionSheet?.appendDisplayAction(action)
         }
-        actionSheet?.setActionList(actionList)
+        //        actionSheet?.setActionList(actionList)
         actionSheet?.frame.size = actionSheet?.actionSheetSize ?? .zero
         let height = actionSheet?.frame.size.height ?? 0
         actionSheet?.frame.origin = CGPoint(x: 0, y: UIScreen.main.bounds.size.height-height)
@@ -242,14 +242,14 @@ open class CustomDisplayAction {
     @objc public convenience init(title: String?,message:String?,preferredStyle: CustomDisplayController.Style){
         self.init(nibName: nil, bundle: nil)
         self.showType = .translation
-//        actionSheet = ZXActionSheet(target: self)
+        //        actionSheet = ZXActionSheet(target: self)
         actionSheet = ActionSheet(target: self)
-        actionSheet?.backgroundColor = .black
         actionSheet?.setTitle(title, AndMessage: message)
+        actionSheet?.setConfig()
         self.containerController = getVCByCustomView(actionSheet!)
     }
     
-//    private var actionSheet: ZXActionSheet?
+    //    private var actionSheet: ZXActionSheet?
     private var actionSheet: ActionSheet?
     
     override init(nibName nibNameOrNil: String?, bundle nibBundleOrNil: Bundle?) {
@@ -321,7 +321,7 @@ open class CustomDisplayAction {
         UIView.animate(withDuration: 0.3, delay: 0, usingSpringWithDamping: 0.8, initialSpringVelocity: 0.8, options: .curveEaseInOut, animations: {
             controller.view.transform = CGAffineTransform(scaleX: 1, y: 1)
         }) { (isFinished) in
-
+            
         }
     }
     
@@ -332,7 +332,7 @@ open class CustomDisplayAction {
         UIView.animate(withDuration: 0.3, delay: 0, usingSpringWithDamping: 1, initialSpringVelocity: 1, options: .curveEaseInOut, animations: {
             controller.view.transform = CGAffineTransform(translationX: 0,y: 0)
         }) { (isFinished) in
-
+            
         }
     }
     
@@ -384,7 +384,7 @@ open class CustomDisplayAction {
             vc.view.backgroundColor = vc.view.backgroundColor?.withAlphaComponent(0)
         }) { (isFinised) in
             vc.view.backgroundColor = vc.view.backgroundColor?.withAlphaComponent(1)
-//            guard let weakSelf = self else { return }
+            //            guard let weakSelf = self else { return }
             completion?()
             self.delegate?.didDismiss?(self)
         }
@@ -394,7 +394,7 @@ open class CustomDisplayAction {
     /*public*/
     ///输入view底部Y轴偏移距离（UIText**）
     @objc public var inputOffsetY: CGFloat = 10
-//    @objc public var
+    //    @objc public var
     ///显示的view
     @objc public var contentView: UIView{
         return content_view
@@ -409,7 +409,7 @@ open class CustomDisplayAction {
     private var content_view = UIView()
     private var touchBegin = CGPoint.zero
     private var touchEnd = CGPoint.zero
-//    private var normalFrame
+    //    private var normalFrame
     ///出现动画类型
     private var showType = DisplayAnimationType.scale
     ///显示View的frame
