@@ -41,7 +41,6 @@ Pod::Spec.new do |s|
 
   # s.license      = "MIT (example)"
   s.license      = { :type => "MIT", :file => "FILE_LICENSE" }
-  s.pod_target_xcconfig = {'$(SWIFT_MODULE_NAME)-Swift.h'}
 
   # ――― Author Metadata  ――――――――――――――――――――――――――――――――――――――――――――――――――――――――― #
   #
@@ -54,9 +53,6 @@ Pod::Spec.new do |s|
   #
 
   s.author             = { "LionPig" => "woshiwangzhezhu@gmail.com" }
-  # Or just: s.author    = "CasaTaloyum"
-  # s.authors            = { "CasaTaloyum" => "casatwy@msn.com" }
-  # s.social_media_url   = "http://twitter.com/CasaTaloyum"
 
   # ――― Platform Specifics ――――――――――――――――――――――――――――――――――――――――――――――――――――――― #
   #
