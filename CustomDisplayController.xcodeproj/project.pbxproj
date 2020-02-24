@@ -19,7 +19,7 @@
 		18BEB57C23FFBB1300C77E72 /* ZXActionSheetConfig.swift in Sources */ = {isa = PBXBuildFile; fileRef = 18BEB57B23FFBB1300C77E72 /* ZXActionSheetConfig.swift */; };
 		18BEB57E23FFC66000C77E72 /* ZXActionSheetFooterView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 18BEB57D23FFC66000C77E72 /* ZXActionSheetFooterView.swift */; };
 		18BEB58123FFCAA800C77E72 /* ActionSheet.swift in Sources */ = {isa = PBXBuildFile; fileRef = 18BEB58023FFCAA800C77E72 /* ActionSheet.swift */; };
-		FA34F89C2402513A00734CD5 /* ActionSheetContentRow.swift in Sources */ = {isa = PBXBuildFile; fileRef = FA34F89B2402513A00734CD5 /* ActionSheetContentRow.swift */; };
+		FA6DF8F22403D8A20085D2EC /* ActionSheetContentRow.swift in Sources */ = {isa = PBXBuildFile; fileRef = FA6DF8F12403D8A20085D2EC /* ActionSheetContentRow.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -37,7 +37,7 @@
 		18BEB57B23FFBB1300C77E72 /* ZXActionSheetConfig.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ZXActionSheetConfig.swift; sourceTree = "<group>"; };
 		18BEB57D23FFC66000C77E72 /* ZXActionSheetFooterView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ZXActionSheetFooterView.swift; sourceTree = "<group>"; };
 		18BEB58023FFCAA800C77E72 /* ActionSheet.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ActionSheet.swift; sourceTree = "<group>"; };
-		FA34F89B2402513A00734CD5 /* ActionSheetContentRow.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = ActionSheetContentRow.swift; path = ../../../../demoTest/demoTest/SelectHeader/ActionSheetContentRow.swift; sourceTree = "<group>"; };
+		FA6DF8F12403D8A20085D2EC /* ActionSheetContentRow.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ActionSheetContentRow.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -106,7 +106,7 @@
 				18BEB57D23FFC66000C77E72 /* ZXActionSheetFooterView.swift */,
 				18BEB57723FFBA9900C77E72 /* ZXActionSheetHeadView.swift */,
 				182769A52401280400010F11 /* ActionSheetContent.swift */,
-				FA34F89B2402513A00734CD5 /* ActionSheetContentRow.swift */,
+				FA6DF8F12403D8A20085D2EC /* ActionSheetContentRow.swift */,
 				18BEB57B23FFBB1300C77E72 /* ZXActionSheetConfig.swift */,
 			);
 			path = ActionSheet;
@@ -183,6 +183,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				FA6DF8F22403D8A20085D2EC /* ActionSheetContentRow.swift in Sources */,
 				18BEB58123FFCAA800C77E72 /* ActionSheet.swift in Sources */,
 				180E06D723B5F10300C2E0D8 /* AppDelegate.swift in Sources */,
 				18BEB57E23FFC66000C77E72 /* ZXActionSheetFooterView.swift in Sources */,
@@ -190,7 +191,6 @@
 				180E06EF23B5F18900C2E0D8 /* ViewController.swift in Sources */,
 				18BEB57823FFBA9900C77E72 /* ZXActionSheetHeadView.swift in Sources */,
 				182769A62401280400010F11 /* ActionSheetContent.swift in Sources */,
-				FA34F89C2402513A00734CD5 /* ActionSheetContentRow.swift in Sources */,
 				18BEB57C23FFBB1300C77E72 /* ZXActionSheetConfig.swift in Sources */,
 				18BEB57623FF89AB00C77E72 /* Define.swift in Sources */,
 			);
