@@ -10,10 +10,7 @@ import UIKit
 
 extension CustomDisplayAction {
     
-    
-    @available(iOS 8.0, *)
-    public enum Style : Int {
-        
+    @objc public enum Style : Int {
         
         case `default` = 0
         
@@ -27,9 +24,9 @@ extension CustomDisplayController {
     
     @objc public enum Style : Int {
         
-        case actionSheet
+        case actionSheet = 0
         
-        //        case alert
+        case alert
         
     }
 }
