@@ -116,11 +116,6 @@ extension ViewController: UITableViewDelegate{
                 let config = ZXActionSheetConfig.default
                 config.contentConfig.rowHeight = 50
                 config.footerConfig.titleColor = .blue
-//                config.headConfig.titleFont = UIFont.boldSystemFont(ofSize: 18)
-//                config.headConfig.msgFont = UIFont.boldSystemFont(ofSize: 12)
-//                config.headConfig.topCornerRadius = 10000
-//                config.footerConfig.spacing = 8
-//                config.footerConfig.backColor = .red
 //                let alert = CustomDisplayController(title: "nilnilnilnilnilnilnilnilnilnilnilnilnilnilnilnilnilnilnilnilnilnilnilnilnilnilnilnilnilnilnilnilnilnilnilnilnilnilnilnilnilnilnilnilnil\nnilnilnilnilnilnil", message: "messagemessagemessagemessagemessagemessagemessagemessagemessagemessage", preferredStyle: .actionSheet)
 //                let alert = CustomDisplayController(title: nil, message: "messagemessagemessagemessagemessagemessagemessagemessagemessagemessage", preferredStyle: .actionSheet)
 //                let alert = CustomDisplayController(title: "nilnilnilnilnilnilnilnilnilnilnilnilnilnilnilnilnilnilnilnilnilnilnilnilnilnilnilnilnilnilnilnilnilnilnilnilnilnilnilnilnilnilnilnilnil", message: nil, preferredStyle: .actionSheet)
