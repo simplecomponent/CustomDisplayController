@@ -26,3 +26,15 @@ public extension UILabel{
     }
 }
 
+/// debug模式下打印
+/// - Parameters:
+///   - debugStr: 需要打印的内容
+///   - methodName: 打印的执行函数
+public func ZXDebugSimplePrint<T>(_ debugStr:T,
+                           methodName:String = #function)
+{
+    #if DEBUG
+    print("----------------------------\nZXDebug\n\(debugStr)\nfrom:\(methodName)\n----------------------------\n")
+    #else
+    #endif
+}

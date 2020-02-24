@@ -106,7 +106,7 @@ open class CustomDisplayAction {
         let nextBottomY = converFrame.origin.y+converFrame.size.height
         let keyBoardTopY = UIScreen.main.bounds.size.height-keyboardH
         let offset = keyBoardTopY - (nextBottomY + inputOffsetY)
-        print("offset:\(offset)")
+        ZXDebugSimplePrint("offset:\(offset)")
         if offset >= 0 { return }
         UIView.animate(withDuration: 0.3, delay: 0, usingSpringWithDamping: 1, initialSpringVelocity: 1, options: [.curveEaseInOut], animations: {
             self.containerController?.view.frame.origin.y += offset
@@ -339,7 +339,7 @@ open class CustomDisplayAction {
     private func didTapMask()->Bool{
         let frame = content_view.convert(content_view.bounds, to: view)
         let tapMask = !frame.contains(touchBegin) && !frame.contains(touchEnd)
-        print("\(tapMask ? "" : "没有")点击mask")
+        ZXDebugSimplePrint("\(tapMask ? "" : "没有")点击mask")
         return tapMask
     }
     
@@ -417,7 +417,7 @@ open class CustomDisplayAction {
     
     //MARK:- 析构
     deinit {
-        print("DisplayController 析构")
+        ZXDebugSimplePrint("DisplayController 析构")
         NotificationCenter.default.removeObserver(self)
     }
 }

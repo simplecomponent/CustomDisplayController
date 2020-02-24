@@ -131,16 +131,16 @@ extension ViewController: UITableViewDelegate{
                 
                 for index in 0..<1{
                     alert.addAction(action: CustomDisplayAction(title: "cancel\(index+1)", style: .cancel, handler: { (action) in
-                        print("cancel")
+                        ZXDebugSimplePrint("cancel")
                     }))
                     alert.addAction(action: CustomDisplayAction(title: "loli\(index+1)", style: .default, handler: { (action) in
-                        print("loli\(index+1)")
+                        ZXDebugSimplePrint("loli\(index+1)")
                     }))
                     alert.addAction(action: CustomDisplayAction(title: "default\(index+1)", style: .default, handler: { (action) in
-                        print("default\(index+1)")
+                        ZXDebugSimplePrint("default\(index+1)")
                     }))
                     alert.addAction(action: CustomDisplayAction(title: "destructive\(index+1)", style: .destructive, handler: { (action) in
-                        print("destructive\(index+1)")
+                        ZXDebugSimplePrint("destructive\(index+1)")
                     }))
                 }
                 
@@ -185,6 +185,6 @@ extension ViewController: CustomDisplayControllerDelegate{
         
     }
     func didDismiss(_ alert: CustomDisplayController) {
-        print("dismiss")
+        ZXDebugSimplePrint("dismiss")
     }
 }
