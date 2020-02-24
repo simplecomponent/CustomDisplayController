@@ -54,6 +54,9 @@ Pod::Spec.new do |s|
   #
 
   s.author             = { "LionPig" => "woshiwangzhezhu@gmail.com" }
+  # Or just: s.author    = "LionPig"
+  # s.authors            = { "LionPig" => "LionPig@QQ.com" }
+  # s.social_media_url   = "http://FS.com/LionPig"
 
   # ――― Platform Specifics ――――――――――――――――――――――――――――――――――――――――――――――――――――――― #
   #
@@ -129,5 +132,10 @@ Pod::Spec.new do |s|
   #  you can include multiple dependencies to ensure it works.
 
   s.requires_arc = true
+
+  # s.xcconfig = { "HEADER_SEARCH_PATHS" => "$(SDKROOT)/usr/include/libxml2" }
+  # s.dependency "BLNetworking"
+  # s.dependency "BLAPIManagers"
+  # s.dependency "BLMediator"
 
 end
