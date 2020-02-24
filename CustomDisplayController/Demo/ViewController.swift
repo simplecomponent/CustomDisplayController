@@ -119,8 +119,8 @@ extension ViewController: UITableViewDelegate{
 //                let alert = CustomDisplayController(title: "nilnilnilnilnilnilnilnilnilnilnilnilnilnilnilnilnilnilnilnilnilnilnilnilnilnilnilnilnilnilnilnilnilnilnilnilnilnilnilnilnilnilnilnilnil\nnilnilnilnilnilnil", message: "messagemessagemessagemessagemessagemessagemessagemessagemessagemessage", preferredStyle: .actionSheet)
 //                let alert = CustomDisplayController(title: nil, message: "messagemessagemessagemessagemessagemessagemessagemessagemessagemessage", preferredStyle: .actionSheet)
 //                let alert = CustomDisplayController(title: "nilnilnilnilnilnilnilnilnilnilnilnilnilnilnilnilnilnilnilnilnilnilnilnilnilnilnilnilnilnilnilnilnilnilnilnilnilnilnilnilnilnilnilnilnil", message: nil, preferredStyle: .actionSheet)
-                let alert = CustomDisplayController(title: nil, message: nil, preferredStyle: .actionSheet)
-//                let alert = CustomDisplayController(title: "选择你喜欢的内容", message: "嘿嘿~\n吼吼~", preferredStyle: .actionSheet)
+//                let alert = CustomDisplayController(title: nil, message: nil, preferredStyle: .actionSheet)
+                let alert = CustomDisplayController(title: "选择你喜欢的内容", message: "嘿嘿~\n吼吼~", preferredStyle: .actionSheet)
                 alert.delegate = self
 //                alert.setActionSheetConfig(config)
                 
