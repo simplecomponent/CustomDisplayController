@@ -122,12 +122,7 @@ extension ViewController: UITableViewDelegate{
 //                let alert = CustomDisplayController(title: nil, message: nil, preferredStyle: .actionSheet)
                 let alert = CustomDisplayController(title: "选择你喜欢的内容", message: "嘿嘿~\n吼吼~", preferredStyle: .actionSheet)
                 alert.delegate = self
-//                alert.setActionSheetConfig(config)
-                
                 for index in 0..<1{
-                    alert.addAction(action: CustomDisplayAction(title: "cancel\(index+1)", style: .cancel, handler: { (action) in
-                        ZXDebugSimplePrint("cancel")
-                    }))
                     alert.addAction(action: CustomDisplayAction(title: "loli\(index+1)", style: .default, handler: { (action) in
                         ZXDebugSimplePrint("loli\(index+1)")
                     }))
@@ -138,7 +133,9 @@ extension ViewController: UITableViewDelegate{
                         ZXDebugSimplePrint("destructive\(index+1)")
                     }))
                 }
-                
+                alert.addAction(action: CustomDisplayAction(title: "cancel", style: .cancel, handler: { (action) in
+                    ZXDebugSimplePrint("cancel")
+                }))
                 present(alert, animated: true, completion: nil)
             
                 return

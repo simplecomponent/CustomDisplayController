@@ -26,7 +26,7 @@ extension CustomDisplayController {
         
         case actionSheet = 0
         
-        case alert
+        case alert       = 1
         
     }
 }
