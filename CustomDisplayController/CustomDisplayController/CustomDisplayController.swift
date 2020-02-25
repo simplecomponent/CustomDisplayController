@@ -10,7 +10,7 @@ import UIKit
 
 extension CustomDisplayAction {
     
-    @objc public enum Style : Int {
+    @objc public enum ActionStyle : Int {
         
         case `default` = 0
         
@@ -22,7 +22,7 @@ extension CustomDisplayAction {
 
 extension CustomDisplayController {
     
-    @objc public enum Style : Int {
+    @objc public enum CustomStyle : Int {
         
         case actionSheet = 0
         
@@ -31,9 +31,9 @@ extension CustomDisplayController {
     }
 }
 
-open class CustomDisplayAction {
+@objc open class CustomDisplayAction: NSObject {
     
-    convenience init(title: String?, style: CustomDisplayAction.Style, handler: ((CustomDisplayAction) -> Void)? = nil) {
+    @objc convenience init(title: String?, style: CustomDisplayAction.ActionStyle, handler: ((CustomDisplayAction) -> Void)? = nil) {
         self.init()
         self._title = title
         self._handler = handler
@@ -41,11 +41,11 @@ open class CustomDisplayAction {
     }
     private var _title: String?
     private var _handler: ((CustomDisplayAction) -> Void)?
-    private var _style = CustomDisplayAction.Style.default
+    private var _style = CustomDisplayAction.ActionStyle.default
     
-    open var handler: ((CustomDisplayAction) -> Void)? { return _handler }
-    open var title: String? { return _title }
-    open var style: CustomDisplayAction.Style { return _style }
+    @objc open var handler: ((CustomDisplayAction) -> Void)? { return _handler }
+    @objc open var title: String? { return _title }
+    @objc open var style: CustomDisplayAction.ActionStyle { return _style }
     //    open var isEnabled: Bool
 }
 
@@ -236,7 +236,7 @@ open class CustomDisplayAction {
     ///   - title: 标题
     ///   - message: 副标题
     ///   - preferredStyle: CustomDisplayController.Style
-    @objc public convenience init(title: String?,message:String?,preferredStyle: CustomDisplayController.Style){
+    @objc public convenience init(title: String?,message:String?,preferredStyle: CustomDisplayController.CustomStyle){
         self.init(nibName: nil, bundle: nil)
         self.showType = .translation
         //        actionSheet = ZXActionSheet(target: self)

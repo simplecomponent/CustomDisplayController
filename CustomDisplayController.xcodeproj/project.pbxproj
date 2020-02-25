@@ -20,6 +20,7 @@
 		18BEB57E23FFC66000C77E72 /* ZXActionSheetFooterView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 18BEB57D23FFC66000C77E72 /* ZXActionSheetFooterView.swift */; };
 		18BEB58123FFCAA800C77E72 /* ActionSheet.swift in Sources */ = {isa = PBXBuildFile; fileRef = 18BEB58023FFCAA800C77E72 /* ActionSheet.swift */; };
 		FA6DF8F22403D8A20085D2EC /* ActionSheetContentRow.swift in Sources */ = {isa = PBXBuildFile; fileRef = FA6DF8F12403D8A20085D2EC /* ActionSheetContentRow.swift */; };
+		FA6DF8F524054D430085D2EC /* ssss.m in Sources */ = {isa = PBXBuildFile; fileRef = FA6DF8F424054D430085D2EC /* ssss.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -38,6 +39,8 @@
 		18BEB57D23FFC66000C77E72 /* ZXActionSheetFooterView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ZXActionSheetFooterView.swift; sourceTree = "<group>"; };
 		18BEB58023FFCAA800C77E72 /* ActionSheet.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ActionSheet.swift; sourceTree = "<group>"; };
 		FA6DF8F12403D8A20085D2EC /* ActionSheetContentRow.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ActionSheetContentRow.swift; sourceTree = "<group>"; };
+		FA6DF8F324054D420085D2EC /* CustomDisplayController-Bridging-Header.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "CustomDisplayController-Bridging-Header.h"; sourceTree = "<group>"; };
+		FA6DF8F424054D430085D2EC /* ssss.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = ssss.m; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -95,6 +98,8 @@
 			isa = PBXGroup;
 			children = (
 				180E06EE23B5F18900C2E0D8 /* ViewController.swift */,
+				FA6DF8F424054D430085D2EC /* ssss.m */,
+				FA6DF8F324054D420085D2EC /* CustomDisplayController-Bridging-Header.h */,
 			);
 			path = Demo;
 			sourceTree = "<group>";
@@ -144,6 +149,7 @@
 				TargetAttributes = {
 					180E06D223B5F10300C2E0D8 = {
 						CreatedOnToolsVersion = 11.3;
+						LastSwiftMigration = 1130;
 					};
 				};
 			};
@@ -193,6 +199,7 @@
 				182769A62401280400010F11 /* ActionSheetContent.swift in Sources */,
 				18BEB57C23FFBB1300C77E72 /* ZXActionSheetConfig.swift in Sources */,
 				18BEB57623FF89AB00C77E72 /* Define.swift in Sources */,
+				FA6DF8F524054D430085D2EC /* ssss.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -336,6 +343,7 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CLANG_ENABLE_MODULES = YES;
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = 8W6BQ9D27A;
 				INFOPLIST_FILE = CustomDisplayController/Info.plist;
@@ -346,6 +354,8 @@
 				);
 				PRODUCT_BUNDLE_IDENTIFIER = com.DGLine.CustomDisplayController;
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_OBJC_BRIDGING_HEADER = "CustomDisplayController/Demo/CustomDisplayController-Bridging-Header.h";
+				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
 				SWIFT_VERSION = 5.0;
 				TARGETED_DEVICE_FAMILY = "1,2";
 			};
@@ -355,6 +365,7 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CLANG_ENABLE_MODULES = YES;
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = 8W6BQ9D27A;
 				INFOPLIST_FILE = CustomDisplayController/Info.plist;
@@ -365,6 +376,7 @@
 				);
 				PRODUCT_BUNDLE_IDENTIFIER = com.DGLine.CustomDisplayController;
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_OBJC_BRIDGING_HEADER = "CustomDisplayController/Demo/CustomDisplayController-Bridging-Header.h";
 				SWIFT_VERSION = 5.0;
 				TARGETED_DEVICE_FAMILY = "1,2";
 			};
