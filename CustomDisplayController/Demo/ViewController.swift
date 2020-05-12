@@ -93,8 +93,20 @@ class ViewController: UIViewController {
     }
     
     
+    private func showCustomField(){
+        customView = UITextField(frame: CGRect(origin: CGPoint(x: view.bounds.size.width/2-150,
+                                                          y: view.bounds.size.height/2-80),
+                                          size: CGSize(width: 300, height: 160)))
+        customView.backgroundColor = .red
+        let disPlay = CustomDisplayController(customView: customView, showType: .scale)
+        disPlay.isJustifyText = false
+        self.present(disPlay, animated: true, completion: nil)
+//        self.perform(#selector(changeView), with: nil, afterDelay: 1)
+    }
+    
+    
     private let cellId = "Cell"
-    private var list = ["自定义View","自定义控制器","ActionSheet"]
+    private var list = ["自定义View","自定义控制器","自定义TextField","ActionSheet"]
     
     private lazy var tableView: UITableView = {
         let tableView = UITableView()
@@ -113,9 +125,12 @@ extension ViewController: UITableViewDelegate{
             case 1:
             showCustomController()
             case 2:
+            showCustomField()
+            case 3:
                 let config = ZXActionSheetConfig.default
                 config.contentConfig.rowHeight = 50
                 config.footerConfig.titleColor = .blue
+                config.footerConfig.spacingColor = .init(white: 1, alpha: 0.8)
 //                let alert = CustomDisplayController(title: "nilnilnilnilnilnilnilnilnilnilnilnilnilnilnilnilnilnilnilnilnilnilnilnilnilnilnilnilnilnilnilnilnilnilnilnilnilnilnilnilnilnilnilnilnil\nnilnilnilnilnilnil", message: "messagemessagemessagemessagemessagemessagemessagemessagemessagemessage", preferredStyle: .actionSheet)
 //                let alert = CustomDisplayController(title: nil, message: "messagemessagemessagemessagemessagemessagemessagemessagemessagemessage", preferredStyle: .actionSheet)
 //                let alert = CustomDisplayController(title: "nilnilnilnilnilnilnilnilnilnilnilnilnilnilnilnilnilnilnilnilnilnilnilnilnilnilnilnilnilnilnilnilnilnilnilnilnilnilnilnilnilnilnilnilnil", message: nil, preferredStyle: .actionSheet)

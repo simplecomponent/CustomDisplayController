@@ -7,7 +7,7 @@
 //
 
 import UIKit
-
+private let footMargin: CGFloat = UIScreen.main.bounds.size.height >= 812 ? 34 : 0
 class ActionSheet: UIView {
     override init(frame: CGRect) {
         super.init(frame: frame)
@@ -139,7 +139,7 @@ class ActionSheet: UIView {
                            toItem: self,
                            attribute: .bottom,
                            multiplier: 1,
-                           constant: 0).isActive = true
+                           constant: -footMargin).isActive = true
         
         NSLayoutConstraint(item: footerView,
                            attribute: .centerX,
@@ -171,8 +171,8 @@ class ActionSheet: UIView {
     /*public*/
     public var actionSheetSize: CGSize{
         get{
-            let footerHeight = footerView.size.height + config.footerConfig.spacing
-            let totalHeight = headView.headSize.height + contentView.size.height + (footerView.isHidden ? 0 : footerHeight)
+            let footerHeight: CGFloat = footerView.size.height + config.footerConfig.spacing
+            let totalHeight: CGFloat = headView.headSize.height + contentView.size.height + (footerView.isHidden ? 0 : footerHeight) + footMargin
             return CGSize(width: UIScreen.main.bounds.size.width,height: totalHeight)
         }
     }

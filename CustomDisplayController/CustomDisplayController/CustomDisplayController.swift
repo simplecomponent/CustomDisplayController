@@ -67,7 +67,9 @@ extension CustomDisplayController {
         super.viewDidLoad()
         view.backgroundColor = maskColor
         addController(containerController)
-        signNotification()
+        if isJustifyText{
+            signNotification()
+        }
     }
     
     public func addAction(action: CustomDisplayAction){
@@ -142,6 +144,9 @@ extension CustomDisplayController {
     }
     
     private func getInputViewsWith(_ view: UIView){
+        if view.isKind(of: UITextView.self) || view.isKind(of: UITextField.self){
+            inputViewList.append(view)
+        }
         for subview in view.subviews{
             if subview.isKind(of: UITextView.self) || subview.isKind(of: UITextField.self){
                 if !inputViewList.contains(where: { $0===subview }){
@@ -298,8 +303,9 @@ extension CustomDisplayController {
         content_view = controller.view
         view.addSubview(content_view)
         showViewFrame = content_view.convert(content_view.bounds, to: view)
-        getInputViewsWith(content_view)
-        
+        if isJustifyText{
+            getInputViewsWith(content_view)
+        }
     }
     
     ///传入自定义view时自定义controller
@@ -308,7 +314,9 @@ extension CustomDisplayController {
         content_view = customView
         vc.view = content_view
         customView.isUserInteractionEnabled = true
-        getInputViewsWith(content_view)
+        if isJustifyText{
+            getInputViewsWith(content_view)
+        }
         return vc
     }
     
@@ -397,6 +405,8 @@ extension CustomDisplayController {
         return content_view
     }
     @objc public weak var delegate: CustomDisplayControllerDelegate?
+    ///是否适配键盘高度
+    @objc public var isJustifyText = true
     ///点击mask是否消失
     @objc public var isAllowTapHidden = true
     @objc public var maskColor = UIColor.black.withAlphaComponent(0.3)
