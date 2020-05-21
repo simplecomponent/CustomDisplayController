@@ -198,7 +198,8 @@ extension CustomDisplayController {
             let point = $0.location(in: view)
             touchEnd = point
         })
-        if didTapMask() && isAllowTapHidden{
+        
+        if didTapMask() && isAllowTapHidden && (presentedViewController == nil){
             dismiss(completion: nil)
         }
     }
@@ -278,6 +279,12 @@ extension CustomDisplayController {
     @objc public func dismiss(_ animation:Bool=true,completion:(()->())?){
         guard let vc = self.containerController else { return }
         delegate?.willDismiss?(self)
+        inputViewList.forEach({
+            if $0.isFirstResponder{
+                $0.resignFirstResponder()
+            }
+        })
+        
         switch showType {
         case .scale:
             dismissScale(vc,animation, completion: completion)
