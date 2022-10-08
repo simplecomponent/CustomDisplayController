@@ -8,15 +8,15 @@
 
 import UIKit
 private let footMargin: CGFloat = UIScreen.main.bounds.size.height >= 812 ? 34 : 0
-class ActionSheet: UIView {
-    override init(frame: CGRect) {
+public class ActionSheet: UIView {
+    public override init(frame: CGRect) {
         super.init(frame: frame)
         setUpView()
     }
     required init?(coder aDecoder: NSCoder) {
         fatalError("init(coder:) has not been implemented")
     }
-    convenience init(target: CustomDisplayController) {
+    public convenience init(target: CustomDisplayController) {
         self.init()
         _target = target
         contentView.target = target
@@ -24,7 +24,7 @@ class ActionSheet: UIView {
             target.dismiss(completion: nil)
         }
     }
-    override func layoutSubviews() {
+    public override func layoutSubviews() {
         super.layoutSubviews()
         headViewConstraint.constant = headView.headSize.height
         contentConstraint.constant = contentView.size.height
@@ -40,7 +40,9 @@ class ActionSheet: UIView {
     /// - Parameter config: ZXActionSheetConfig
     public func setConfig(_ config: ZXActionSheetConfig = ZXActionSheetConfig.default){
         headView.setConfig(config.headConfig)
+        backgroundColor = config.actionSheetBackgroundColor
         contentView.headHeight = headView.headSize.height
+        contentView.backgroundColor = config.contentConfig.separatorColor
         contentView.setConfig(config, footerIsShow: false)
         footerView.setConfig(config.footerConfig)
         self.config = config

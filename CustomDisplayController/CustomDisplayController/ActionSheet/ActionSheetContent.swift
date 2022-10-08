@@ -156,7 +156,6 @@ class ActionSheetContent: UIView {
         stack.alignment = .fill
         stack.spacing = lineWidth
         stack.distribution = .fillEqually
-        
         return stack
     }()
 

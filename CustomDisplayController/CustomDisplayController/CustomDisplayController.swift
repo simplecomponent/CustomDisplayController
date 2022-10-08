@@ -33,7 +33,7 @@ extension CustomDisplayController {
 
 @objc open class CustomDisplayAction: NSObject {
     
-    @objc convenience init(title: String?, style: CustomDisplayAction.ActionStyle, handler: ((CustomDisplayAction) -> Void)? = nil) {
+    @objc public convenience init(title: String?, style: CustomDisplayAction.ActionStyle, handler: ((CustomDisplayAction) -> Void)? = nil) {
         self.init()
         self._title = title
         self._handler = handler
@@ -67,9 +67,6 @@ extension CustomDisplayController {
         super.viewDidLoad()
         view.backgroundColor = maskColor
         addController(containerController)
-        if isJustifyText{
-            signNotification()
-        }
     }
     
     public func addAction(action: CustomDisplayAction){
@@ -237,12 +234,12 @@ extension CustomDisplayController {
         self.containerController = controller
     }
     
-    /// 默认视图
+    /// 默认视图（只有用在ZXActionSheet有效）
     /// - Parameters:
     ///   - title: 标题
     ///   - message: 副标题
     ///   - preferredStyle: CustomDisplayController.Style
-    @objc public convenience init(title: String?,message:String?,preferredStyle: CustomDisplayController.CustomStyle){
+    @objc public convenience init(title: String?=nil,message:String?=nil,preferredStyle: CustomDisplayController.CustomStyle){
         self.init(nibName: nil, bundle: nil)
         self.showType = .translation
         //        actionSheet = ZXActionSheet(target: self)
@@ -257,6 +254,7 @@ extension CustomDisplayController {
     
     override init(nibName nibNameOrNil: String?, bundle nibBundleOrNil: Bundle?) {
         super.init(nibName: nibNameOrNil, bundle: nibBundleOrNil)
+        if isJustifyText{ signNotification() }
         initController()
     }
     

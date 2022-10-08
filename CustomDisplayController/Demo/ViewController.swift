@@ -129,7 +129,9 @@ extension ViewController: UITableViewDelegate{
             case 3:
                 let config = ZXActionSheetConfig.default
                 config.contentConfig.rowHeight = 50
-                config.footerConfig.titleColor = .blue
+                config.contentConfig.separatorColor = .blue
+                config.contentConfig.defaultColor = .blue
+                config.footerConfig.titleColor = .brown
                 config.footerConfig.spacingColor = .init(white: 1, alpha: 0.8)
 //                let alert = CustomDisplayController(title: "nilnilnilnilnilnilnilnilnilnilnilnilnilnilnilnilnilnilnilnilnilnilnilnilnilnilnilnilnilnilnilnilnilnilnilnilnilnilnilnilnilnilnilnilnil\nnilnilnilnilnilnil", message: "messagemessagemessagemessagemessagemessagemessagemessagemessagemessage", preferredStyle: .actionSheet)
 //                let alert = CustomDisplayController(title: nil, message: "messagemessagemessagemessagemessagemessagemessagemessagemessagemessage", preferredStyle: .actionSheet)
